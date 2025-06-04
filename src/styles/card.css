@@ -1,0 +1,103 @@
+/* Contenedor que muestra las tarjetas en grid con 3 columnas */
+.contenedor-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 10px;
+  justify-items: center; /* centra horizontalmente cada tarjeta */
+}
+
+/* Tarjeta ocupa todo el ancho de su columna */
+.tarjeta {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 12px;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+/* Imagen dentro de la tarjeta */
+.tarjeta-imagen {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Contenido textual de la tarjeta */
+.tarjeta-contenido {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Título */
+.tarjeta-titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: #222;
+}
+
+/* Descripción */
+.tarjeta-descripcion {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+  max-height: 3.6em; /* 3 líneas */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+
+/* Precio */
+.tarjeta-precio {
+  font-weight: 700;
+  color: #007700;
+  font-size: 1.05rem;
+  margin: 0 0 8px 0;
+}
+
+/* Botones */
+.boton-agregar,
+.boton-quitar {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;        /* Más padding para que se vean mejor */
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;   /* Para que el botón se quede al inicio (izquierda) */
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,123,255,0.3);
+  margin-top: auto;         /* Empuja el botón hacia abajo en la columna */
+  margin-bottom: 0;
+  user-select: none;
+  font-size: 0.9rem;
+  display: inline-block;    /* Para evitar que tome todo el ancho */
+}
+
+.boton-agregar:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 12px rgba(0,86,179,0.5);
+}
+
+.boton-quitar {
+  background-color: #dc3545;
+  box-shadow: 0 2px 8px rgba(220,53,69,0.3);
+}
+
+.boton-quitar:hover {
+  background-color: #a71d2a;
+  box-shadow: 0 4px 12px rgba(167,29,42,0.5);
+}
